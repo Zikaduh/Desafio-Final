@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/styler.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="buttoncreater"> 
+            <button class="btn" onclick="OpenModal('MDL')">Criar</button>
+            <button class="btn" onclick="OpenLink('MDL')">Json</button>
+            <button class="btn" onclick="Reflash()">Atualizar</button>
+        </div>
+    </div>
+    <div id="MDL" class="modal">
+        <input id="hdID" type="hidden"/>
+        <input id="DateOld" type="hidden"/>
+        <div class="modal-content">
+            <span class="close" onclick="CloserModal('MDL')">&cross;</span>
+            <form onsubmit="CreateAndUpdate()">
+                <div class="content">
+                    <label for="titulo">Titulo:</label>
+                    <input name="titulo" id="titulo" type="text" required>
+                </div>
+                <div class="content">
+                    <label for="description">Descrição:</label>
+                    <input name="description" id="description" type="text" required>
+                </div>
+                <div class="content">
+                    <label for="imgLink">Imagem(link):</label>
+                    <input name="imgLink" id="imgLink" type="text" required>
+                </div>
+                <div class="content">
+                    <label for="teacher_name">Nome do Professor:</label>
+                    <input name="teacher_name" id="teacher_name" type="text" required>
+                </div>
+                <div class="content">
+                    <label for="class_list">Lista de aulas(link):</label>
+                    <input name="class_list" id="class_list" type="text" required>
+                </div>
+                <div class="content">
+                    <button id="btn-modal" type="submit">salva</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="tabela">
+        <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Imagem</th>
+                <th>Titulo</th>
+                <th>Descrição</th>
+                <th>Nome do Professor</th>
+                <th>Lista de Aulas</th>
+                <th>data</th>
+              </tr>
+            </thead>
+            <tbody id="corpo">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="modal.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
